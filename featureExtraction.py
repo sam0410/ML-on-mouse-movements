@@ -1,6 +1,6 @@
 '''
 feature 1 (avgTime):calculates average time between moves
-feature 2 (avgSpeed):calculates a value similar to average speed of user moves
+feature 2 (avgSpeed):calculates a value similar to average speed of user moves 
 feature 3 (TimeSpent):calculates time duration user spends online
 feature 4 (avgMoves):calculates avg number of by mouse movements per second
 feature 5 (avgx):avg x coordinate of mouse pointer
@@ -29,26 +29,27 @@ for fileName in FileList:
 	meany=0
 	numberOfClicks=0
 	drags=0
-        TimeSpent=data[rows-1,0].astype(np.float)-data[0,0].astype(np.float)
-
+	TimeSpent=data[rows-1,0].astype(np.float)-data[0,0].astype(np.float)
 	for i in range (1,rows):
 		timeT=data[i,0].astype(np.float)-data[i-1,0].astype(np.float)
 		avgSpeed=avgSpeed+((np.linalg.norm([data[i,4].astype(np.float) - data[i-1,4].astype(np.float), data[i,5].astype(np.float) - data[i-1,5].astype(np.float)]))/(timeT*rows+1))
 		#to avoid NaN, 1 is added in the denominator
-		
 		meanx=  meanx+	((data[i,0].astype(np.float)-data[i-1,0].astype(np.float))*(data[i-1,4].astype(np.float)))/ TimeSpent
 		meany=  meany+	((data[i,0].astype(np.float)-data[i-1,0].astype(np.float))*(data[i-1,5].astype(np.float)))/ TimeSpent
-
 		if ((data[i-1,3]!="Drag") and (data[i,3]=="Drag")):
 			drags=drags+1
-               	if(data[i-1,2]!=data[i,2]):
+		if(data[i-1,2]!=data[i,2]):
 			numberOfClicks=numberOfClicks+1
-	
- 
+			
 	avgMoves=(rows/TimeSpent)  
 	avgTime= (TimeSpent/rows)
 	features=np.array([avgTime,avgSpeed,TimeSpent,avgMoves,meanx,meany,numberOfClicks,drags])
 	featureVector=np.column_stack((featureVector,features))
 
 featureVector=featureVector[:,1:]
-featureVector=np.transpose(featureVector)
+
+import pandas as pd
+df=pd.DataFrame(data=featureVector,index=["avgTime",'avgSpeed','TimeSpent','avgMoves','meanx','meany','numberOfClicks','drags'])
+
+from IPython.display import display, HTML
+display(df)
