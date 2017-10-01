@@ -8,6 +8,9 @@ feature 6 (avgy):avg y coordinate of mouse pointer
 feature 7 (numberOfClicks):number of mouse clicks in the session
 feature 8 (drags):number of mouse drags in the session
 '''
+
+#For now only 9 naive features are used
+
 FileList=["session_0041905381","session_1060325796","session_3320405034",  "session_3826583375"  ,"session_6668463071","session_8961330453","session_9017095287"]
 
 #FileList=["session_0041905381"]
@@ -40,9 +43,12 @@ for fileName in FileList:
 			drags=drags+1
                	if(data[i-1,2]!=data[i,2]):
 			numberOfClicks=numberOfClicks+1
-	#For now only 4 features are used, more to be added.
+	
  
 	avgMoves=(rows/TimeSpent)  
 	avgTime= (TimeSpent/rows)
 	features=np.array([avgTime,avgSpeed,TimeSpent,avgMoves,meanx,meany,numberOfClicks,drags])
 	featureVector=np.column_stack((featureVector,features))
+
+featureVector=featureVector[:,1:]
+featureVector=np.transpose(featureVector)
