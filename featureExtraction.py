@@ -3,8 +3,8 @@ feature 1 (avgTime):calculates average time between moves
 feature 2 (avgSpeed):calculates a value similar to average speed of user moves
 feature 3 (TimeSpent):calculates time duration user spends online
 feature 4 (avgMoves):calculates avg number of by mouse movements per second
-feature 5 (avgx):avg x coordinate of mouse pointer when user changes coordinate
-
+feature 5 (avgx):avg x coordinate of mouse pointer
+feature 6 (avgy):avg y coordinate of mouse pointer
 '''
 FileList=["session_0041905381","session_1060325796","session_3320405034",  "session_3826583375"  ,"session_6668463071","session_8961330453","session_9017095287"]
 
