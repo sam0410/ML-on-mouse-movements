@@ -32,8 +32,9 @@ for fileName in FileList:
 		avgSpeed=avgSpeed+((np.linalg.norm([data[i,4].astype(np.float) - data[i-1,4].astype(np.float), data[i,5].astype(np.float) - data[i-1,5].astype(np.float)]))/(timeT*rows+1))
 		#to avoid NaN, 1 is added in the denominator
 		
-		meanx=	meanx+(data[i-1,4].astype(np.float))*(data[i,0].astype(np.float)-data[i-1,0].astype(np.float)) )/TimeSpent
-		meany=	meany+(data[i-1,5].astype(np.float))*(data[i,0].astype(np.float)-data[i-1,0].astype(np.float)) )/TimeSpent
+		meanx=  meanx+	((data[i,0].astype(np.float)-data[i-1,0].astype(np.float))*(data[i-1,4].astype(np.float)))/ TimeSpent
+		meany=  meany+	((data[i,0].astype(np.float)-data[i-1,0].astype(np.float))*(data[i-1,5].astype(np.float)))/ TimeSpent
+
 		
                	if(data[i-1,2]!=data[i,2]):
 			numberOfClicks=numberOfClicks+1
