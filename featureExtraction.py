@@ -9,7 +9,7 @@ feature 7 (numberOfClicks):number of mouse clicks in the session
 feature 8 (drags):number of mouse drags in the session
 '''
 
-#For now only 8 naive features are used
+#For now only 8 naive features have been extracted for now, more features to be added and the existing ones are to be improved.
 
 FileList=["session_0041905381","session_1060325796","session_3320405034",  "session_3826583375"  ,"session_6668463071","session_8961330453","session_9017095287"]
 
