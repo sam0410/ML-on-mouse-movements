@@ -1,6 +1,6 @@
 '''
 feature 1 (avgTime):calculates average time between moves
-feature 2 (avgSpeed):calculates average speed of user moves
+feature 2 (avgSpeed):calculates a value similar to average speed of user moves
 feature 3 (TimeSpent):calculates time duration user spends online
 feature 4 (avgMoves):calculates avg number of by mouse movements per second  
 '''
