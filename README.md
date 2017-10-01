@@ -1,6 +1,7 @@
 # ML-on-mouse-movements
 
 user7 is the sessional log of mouse data of a user as in the dataset :
+
 [https://github.com/balabit/Mouse-Dynamics-Challenge/tree/master/training_files/user7]
 
 The following features have been extracted :
