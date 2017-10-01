@@ -21,5 +21,9 @@ feature 7 (numberOfClicks):number of mouse clicks in the session
 
 feature 8 (drags):number of mouse drags in the session
 
+
+
+
+
 More features are to be added and the existing features are to be improved.
 
